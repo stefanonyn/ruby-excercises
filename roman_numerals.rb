@@ -1,13 +1,13 @@
 def convert_to_roman number
 
-	romans_array = [[1000,'M'],[500,'D'],[100,'C'],[50,'L'],[10,'X'],[5,'V'][1,'I']]
+	romans_array = [[1000,'M'],[500,'D'],[100,'C'],[50,'L'],[10,'X'],[5,'V'],[1,'I']]
 	converted_array = []
 
 	romans_array.each do |rom_num|
 		num = rom_num[0]
 		letter = rom_num[1]
 
-		if number > num
+		if number >= num
 			times = number / num
 			roman_letter = letter*times
 			converted_array.push(roman_letter)
