@@ -10,5 +10,3 @@ while start_year < (end_year + 1)
 	end
 	start_year += 1 
 end
-
-&g4gTq7**tw2I6DJ
