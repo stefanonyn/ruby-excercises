@@ -1,3 +1,5 @@
+require 'pry'
+
 puts 'Hello dearest SONNY how are you?'
 bye_count = 0
 while true
@@ -13,7 +15,8 @@ while true
 		puts 'ok dearest SONNY see you soon!'
 		break
 	end
-	
+	binding.pry
+
 	if tell_grandma != tell_grandma.upcase && tell_grandma.downcase != 'bye'
 		puts 'HUH?! SPEAK UP, SONNY!'	
 	elsif tell_grandma.downcase != 'bye'
