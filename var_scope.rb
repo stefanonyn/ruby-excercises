@@ -1,39 +1,49 @@
 outer_var = "hi I am an outer variable"
 
-def change_var variable
+# def change_var variable
 
-  variable.capitalize!
+#   variable.capitalize!
   
 
-end
+# end
 
-change_var outer_var
-puts outer_var
+# change_var outer_var
+# puts outer_var
 
-def change1 variable1
+# def change1 variable1
 
-  outer_var = variable1 << ", and I have been changed"
+#   outer_var = variable1 << ", and I have been changed"
   
-end
+# end
 
-change1 outer_var
-puts outer_var
+# change1 outer_var
+# puts outer_var
 
-def change2 variable2
+# def change2 variable2
 
-  variable2.split(' ')
+#   variable2.split(' ')
   
-end
+# end
 
-outer_var = change2 outer_var
+# outer_var = change2 outer_var
+# puts outer_var
+
+puts outer_var.object_id
+  2.times do 
+    outer_var = outer_var.chop
+  end
 puts outer_var
+puts outer_var.object_id
 
-def change3 variable
+puts "*" * 50
 
-  variable.each { |v| v.capitalize }
-  str = variable.to_s
+outer_var = "hi I am an outer variable"
+puts outer_var.object_id
+
+2.times do 
+  puts outer_var.chop
+  puts outer_var.object_id
 
 end
 
-change3 outer_var
-puts str
+puts outer_var
