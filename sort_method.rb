@@ -11,9 +11,7 @@ def my_sort unsorted
     not_minor = 0
 
     unsorted.each do |char|
-      if test_element <= char
-        true
-      else
+      if test_element > char
         not_minor += 1
       end   
     end
