@@ -2,29 +2,22 @@ arr = [ "aaa", "bravo", "beach", "bell", "zebra", "mother", "father", "tiger", "
 
 
 def my_sort unsorted
-  arr_size = unsorted.length
   
   sorted = []
 
-  while sorted.length < arr_size
+  until unsorted.length == 0
     test_element = unsorted.pop
-    not_minor = 0
+    not_minor = false
 
     unsorted.each do |char|
       if test_element > char
-        not_minor += 1
+        not_minor = true
+        break
       end   
     end
     
-    if not_minor == 0
-
-      sorted.push(test_element)
-
-    else
-
-    unsorted.unshift(test_element)
+    not_minor ?  unsorted.unshift(test_element) :  sorted.push(test_element)
     
-    end
   end
   sorted
 end
