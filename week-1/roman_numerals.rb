@@ -1,4 +1,6 @@
+require "pry"
 def convert_to_roman number
+
 
 roman_number = ''
 
@@ -53,6 +55,45 @@ end
 
 end
 
+def roman_to_i roman
+	
+
+	romans_array = [{ 'M' => 1000 }, { 'D' => 500 }, { 'C' => 100 }, { 'L' => 50 }, { 'X' => 10 }, { 'V' => 5 }, { 'I' => 1 }]
+
+	rom_arr = roman.split(//)
+	sub = []
+	total = 0
+
+	rom_arr.each_with_index do |char, index|
+		if index+1 < rom_arr.length
+			if (romans_array.select {|f| f[char]  })[0][char] < (romans_array.select {|f| f[rom_arr[index+1]]  })[0][rom_arr[index+1]]
+				
+				sub << rom_arr.slice!(index)
+
+			end 
+			next
+		end
+	end	
+
+	rom_arr.each do |letter|
+		# binding.pry	
+		total += (romans_array.select {|f| f[letter]  })[0][letter]
+	end
+
+
+	if sub.length > 0
+		sub.each do |letter|
+		
+		total -= (romans_array.select {|f| f[letter]  })[0][letter]
+
+		end		
+	end
+
+total
+end
+
+
+
 
 
 number = ''
@@ -62,7 +103,9 @@ puts 'p.s. to exit this program simply hit enter on an empty line, or type 0 and
 while number != 0
 
 	number = gets.chomp.to_i
-	puts convert_to_roman number
+	roman = convert_to_roman number
+	puts roman
+	puts roman_to_i roman
 
 end
 
@@ -101,3 +144,11 @@ end
 # 	puts convert_to_roman number
 
 # end
+
+	# romans_array = [{ value:1000, let:'M'},
+	# 								{500,'D'},
+	# 								{100,'C'},
+	# 								{50,'L'},
+	# 								{10,'X'},
+	# 								{5,'V'},
+	# 								{1,'I'}]

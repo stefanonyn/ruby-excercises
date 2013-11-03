@@ -1,6 +1,0 @@
----
-- Give Quiche A Chance
-- hello
-- I am one string inside another array
-- and love
-- Mutants Out!
