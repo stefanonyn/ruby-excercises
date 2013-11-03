@@ -1,4 +1,4 @@
-arr = [ "aaa", "bravo", "beach", "bell", "zebra", "mother", "father", "tiger", "love", "aaa", "love"]
+arr = [ "Aaa", "bravo", "beach", "bell", "Zebra", "zebra", "mother", "father", "tiger", "love", "aaa", "aAA", "aAa", "aaA", "love"]
 
 
 def my_sort unsorted
@@ -10,7 +10,7 @@ def my_sort unsorted
     not_minor = false
 
     unsorted.each do |char|
-      if test_element > char
+      if test_element.upcase > char.upcase
         not_minor = true
         break
       end   
